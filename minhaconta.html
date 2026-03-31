@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Minha Conta</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+      background: url("fundo-minhaconta.png") no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+    }
+    .account-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0,0,0,0.7);
+      padding: 30px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 500px;
+      text-align: center;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      background: #fff;
+      color: #333;
+      margin: 10px 0;
+      padding: 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    li:hover {
+      background: #ddd;
+    }
+    .voltar {
+      margin-top: 20px;
+      padding: 10px;
+      background: #f44336;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      width: 100%;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="account-container">
+    <h1>Minha Conta</h1>
+    <p>Bem-vindo, usuário!</p>
+    <ul>
+      <li>Editar Perfil</li>
+      <li>Histórico de Compras</li>
+      <li>Configurações</li>
+      <li>Sair</li>
+    </ul>
+    <button class="voltar" onclick="window.location.href='interior.html'">Voltar ao Início</button>
+  </div>
+</body>
+</html>

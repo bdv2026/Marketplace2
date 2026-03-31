@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Marketplace - Interior</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+    .container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background: url("assets/interior-shopping.png") no-repeat;
+      background-position: 50% 40%;
+      background-size: cover;
+    }
+    .botao {
+      position: absolute;
+      cursor: pointer;
+    }
+    .botao img {
+      max-width: 350px;
+      transition: transform 0.2s, filter 0.2s;
+    }
+    .botao:hover img {
+      transform: scale(1.08);
+      filter: brightness(1.2);
+    }
+
+    /* posições dos botões principais */
+    #cadastrar { bottom: 20px; left: 30%; transform: translateX(-50%); }
+    #minhaconta { bottom: 20px; left: 70%; transform: translateX(-50%); }
+    #inicio { top: 120px; left: 50%; transform: translateX(-50%); }
+
+    /* carrinho */
+    .carrinho {
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+      text-align: center;
+    }
+    .carrinho img {
+      max-width: 200px;
+      display: block;
+      margin: 0 auto;
+      cursor: pointer;
+    }
+    .finalizar {
+      display: block;
+      margin-top: 10px;
+      padding: 12px 24px;
+      font-size: 16px;
+      cursor: pointer;
+      background: #f44336;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+
+    /* área de visualização do carrinho */
+    .carrinho-container {
+      position: absolute;
+      top: 20%;
+      right: 250px;
+      width: 300px;
+      background: rgba(255,255,255,0.95);
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 15px;
+      display: none;
+    }
+    .carrinho-container h3 {
+      margin-top: 0;
+      text-align: center;
+    }
+    .carrinho-container ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .carrinho-container li {
+      padding: 6px 0;
+      border-bottom: 1px solid #ddd;
+    }
+    .carrinho-container button {
+      margin-top: 10px;
+      padding: 8px 16px;
+      background: #f44336;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* botões de pesquisa e promoções reposicionados */
+    #pesquisa { 
+      top: 20px;   /* canto superior esquerdo */
+      left: 20px;  
+    }
+    #promocoes { 
+      top: 220px;  /* bem mais abaixo, aumentando a distância */
+      left: 20px;  
+    }
+    #promocoes img { 
+      max-width: 400px; 
+    }
+
+    /* carrosséis */
+    .carrossel-container {
+      position: absolute;
+      top: 25%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      background: rgba(255,255,255,0.9);
+      padding: 20px;
+      border-radius: 10px;
+      display: none;
+    }
+    .fechar {
+      display: block;
+      margin: 15px auto 0 auto;
+      padding: 8px 16px;
+      font-size: 14px;
+      cursor: pointer;
+      background: #f44336;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+
+    /* campo de busca */
+    .busca {
+      text-align: center;
+      margin-top: 15px;
+    }
+    .busca input {
+      padding: 8px;
+      width: 60%;
+      font-size: 14px;
+    }
+    .busca button {
+      padding: 8px 12px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Botões principais -->
+    <div class="botao" id="cadastrar" onclick="window.location.href='cadastrar.html'">
+      <img src="Botão-Cadastrar.png" alt="Botão Cadastrar">
+    </div>
+    <div class="botao" id="inicio" onclick="window.location.href='index.html'">
+      <img src="medico.png" alt="Botão Início">
+    </div>
+    <div class="botao" id="minhaconta" onclick="window.location.href='minhaconta.html'">
+      <img src="Botão Minha Conta.png" alt="Botão Minha Conta">
+    </div>
+
+    <!-- Carrinho + Finalizar Compra -->
+    <div class="carrinho">
+      <img src="Botão Carrinho de Compras.png" alt="Carrinho de Compras" onclick="mostrarCarrinho()">
+      <button class="finalizar" onclick="window.location.href='finalizar.html'">Finalizar Compra</button>
+    </div>
+
+    <!-- Área de visualização do carrinho -->
+    <div class="carrinho-container" id="carrinho-container">
+      <h3>Itens no Carrinho</h3>
+      <ul id="lista-carrinho"></ul>
+      <button onclick="fecharCarrinho()">Fechar</button>
+    </div>
+
+    <!-- Botões Pesquisa e Promoções reposicionados -->
+    <div class="botao" id="pesquisa" onclick="mostrarCarrossel('carrossel-pesquisa')">
+      <img src="Botão Pesquisa de Produtos.png" alt="Pesquisa de Produtos">
+    </div>
+    <div class="botao" id="promocoes" onclick="mostrarCarrossel('carrossel-promocoes')">
+      <img src="Botão Promoções.png" alt="Promoções">
+    </div>
+
+    <!-- Carrossel de Pesquisa de Produtos -->
+    <div class="carrossel-container" id="carrossel-pesquisa">
+      <h2 style="text-align:center;">Pesquisa de Produtos</h2>
+      <div class="busca">
+        <input type="text" id="produtoPesquisa" placeholder="Digite o produto...">
+        <button onclick="buscarProduto('produtoPesquisa')">🔍</button>
+      </div>
+      <button class="fechar" onclick="fecharCarrossel()">Fechar</button>
+    </div>
+
+    <!-- Carrossel de Promoções -->
+    <div class="carrossel-container" id="carrossel-promocoes">
+      <h2 style="text-align:center;">Promoções</h2>
+      <div class="busca">
+        <input type="text" id="produtoPromocao" placeholder="Digite o produto...">
+        <button onclick="buscarProduto('produtoPromocao')">🔍</button>
+      </div>
+      <button class="fechar" onclick="fecharCarrossel()">Fechar</button>
+    </div>
+  </div>
+
+  <script>
+    let carrinho = [];
+
+    function mostrarCarrossel(id) {
+      document.getElementById('carrossel-pesquisa').style.display = 'none';
+      document.getElementById('carrossel-promocoes').style.display = 'none';
+      document.getElementById(id).style.display = 'block';
+    }
+
+    function fecharCarrossel() {
+      document.getElementById('carrossel-pesquisa').style.display = 'none';
+      document.getElementById('carrossel-promocoes').style.display = 'none';
+    }
+
+    function buscarProduto(inputId) {
+      const valor = document.getElementById(inputId).value;
+      if (valor.trim() !== "") {
+        alert("Buscando produto: " + valor);
+      } else {
+        alert("Digite um produto para buscar.");
+      }
+    }
+
+    // Funções do carrinho
+    function mostrarCarrinho() {
+      const container = document.getElementById('carrinho-container');
+      const lista = document.getElementById('lista-carrinho');
+      lista.innerHTML = "";
+
+      if (carrinho.length === 0) {
+        lista.innerHTML = "<li>Carrinho vazio</li>";
+      } else {
+        carrinho.forEach(item => {
+          const li = document.createElement("li");
+          li.textContent = item;
+          lista.appendChild(li);
+        });
+      }
+
+      container.style.display = "block";
+    }
+
+    function fecharCarrinho() {
+      document.getElementById('carrinho-container').style.display = 'none';
+    }
+
+    // Exemplo de adicionar produto ao carrinho
+    function adicionarAoCarrinho(produto) {
+      carrinho.push(produto);
+      alert(produto + " adicionado ao carrinho!");
+    }
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+    
+   
+ 
+
+

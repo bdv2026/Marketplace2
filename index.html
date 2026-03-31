@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Marketplace - Página Inicial</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      background: white;
+    }
+    .container {
+      display: flex;
+      width: 100%;
+      height: 100%;
+    }
+    .logo-lateral {
+      width: 10%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      background: white;
+    }
+    .logo-lateral a {
+      width: 100%;
+      flex: 1; /* cada logo ocupa uma fração da altura */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .logo-lateral img {
+      width: 90%;
+      height: 100%;
+      object-fit: contain;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .logo-lateral img:hover {
+      transform: scale(1.05);
+    }
+    .imagem-central {
+      position: relative;
+      width: 80%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .imagem-central img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 70%;
+    }
+    .botao {
+      position: absolute;
+      cursor: pointer;
+    }
+    .botao img {
+      max-width: 350px;
+      height: auto;
+      transition: transform 0.2s;
+    }
+    .botao:hover img {
+      transform: scale(1.08);
+    }
+    /* posições dos botões */
+    #inicio { bottom: 40px; left: 50%; transform: translateX(-50%); }
+    #cadastrar { bottom: 40px; left: 30%; transform: translateX(-50%); }
+    #minhaconta { bottom: 40px; left: 70%; transform: translateX(-50%); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Logos laterais esquerda -->
+    <div class="logo-lateral">
+      <a href="SEU_LINK_CURTO_MERCADOLIVRE" target="_blank"><img src="assets/logo-mercadolivre.png" alt="Mercado Livre"></a>
+      <a href="https://www.magazinevoce.com.br/magazinein_1479585/" target="_blank"><img src="assets/logo-magalu.png" alt="Magalu"></a>
+      <a href="SEU_LINK_CURTO_MERCADOLIVRE" target="_blank"><img src="assets/logo-mercadolivre.png" alt="Mercado Livre"></a>
+      <a href="https://www.magazinevoce.com.br/magazinein_1479585/" target="_blank"><img src="assets/logo-magalu.png" alt="Magalu"></a>
+      <a href="SEU_LINK_CURTO_MERCADOLIVRE" target="_blank"><img src="assets/logo-mercadolivre.png" alt="Mercado Livre"></a>
+      <a href="https://www.magazinevoce.com.br/magazinein_1479585/" target="_blank"><img src="assets/logo-magalu.png" alt="Magalu"></a>
+      <!-- repita quantos blocos forem necessários até preencher toda a altura -->
+    </div>
+
+    <!-- Imagem central da fachada -->
+    <div class="imagem-central">
+      <img src="assets/fachada-shopping.png" alt="Fachada Shopping">
+
+      <!-- Botão Início -->
+      <div class="botao" id="inicio" onclick="window.location.href='interior.html'">
+        <img src="medico.png" alt="Botão Início">
+      </div>
+
+      <!-- Botão Cadastrar -->
+      <div class="botao" id="cadastrar" onclick="window.location.href='cadastrar.html'">
+        <img src="Botão-Cadastrar.png" alt="Botão Cadastrar">
+      </div>
+
+      <!-- Botão Minha Conta -->
+      <div class="botao" id="minhaconta" onclick="window.location.href='minhaconta.html'">
+        <img src="Botão Minha Conta.png" alt="Botão Minha Conta">
+      </div>
+    </div>
+
+    <!-- Logos laterais direita -->
+    <div class="logo-lateral">
+      <a href="https://www.magazinevoce.com.br/magazinein_1479585/" target="_blank"><img src="assets/logo-magalu.png" alt="Magalu"></a>
+      <a href="SEU_LINK_CURTO_MERCADOLIVRE" target="_blank"><img src="assets/logo-mercadolivre.png" alt="Mercado Livre"></a>
+      <a href="https://www.magazinevoce.com.br/magazinein_1479585/" target="_blank"><img src="assets/logo-magalu.png" alt="Magalu"></a>
+      <a href="SEU_LINK_CURTO_MERCADOLIVRE" target="_blank"><img src="assets/logo-mercadolivre.png" alt="Mercado Livre"></a>
+      <a href="https://www.magazinevoce.com.br/magazinein_1479585/" target="_blank"><img src="assets/logo-magalu.png" alt="Magalu"></a>
+      <a href="SEU_LINK_CURTO_MERCADOLIVRE" target="_blank"><img src="assets/logo-mercadolivre.png" alt="Mercado Livre"></a>
+      <!-- repita quantos blocos forem necessários até preencher toda a altura -->
+    </div>
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

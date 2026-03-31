@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Promoções</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+      background: #fff8e1; /* fundo claro */
+      overflow-y: scroll; /* ativa rolagem vertical */
+    }
+    .container {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #e65100;
+    }
+    .promo {
+      background: #fff3e0;
+      border: 1px solid #ffcc80;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 15px;
+    }
+    .promo h2 {
+      margin: 0;
+      font-size: 20px;
+      color: #d84315;
+    }
+    .promo p {
+      margin: 5px 0;
+      color: #555;
+    }
+    .preco {
+      font-size: 18px;
+      font-weight: bold;
+      color: #2e7d32;
+    }
+    .voltar {
+      margin-top: 20px;
+      padding: 10px;
+      background: #f44336;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      width: 100%;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Promoções Especiais</h1>
+
+    <!-- Exemplo de promoção -->
+    <div class="promo">
+      <h2>Produto em Oferta</h2>
+      <p>Descrição breve da promoção.</p>
+      <span class="preco">De R$ 199,90 por R$ 99,90</span>
+    </div>
+
+    <div class="promo">
+      <h2>Produto em Oferta 2</h2>
+      <p>Descrição breve da promoção.</p>
+      <span class="preco">De R$ 299,90 por R$ 149,90</span>
+    </div>
+
+    <!-- Botão de voltar -->
+    <button class="voltar" onclick="window.location.href='interior.html'">Voltar ao Início</button>
+  </div>
+</body>
+</html>

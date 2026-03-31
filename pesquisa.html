@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Pesquisa de Produtos</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+      background: #f9f9f9; /* fundo neutro */
+      overflow-y: scroll; /* ativa barra de rolagem vertical */
+    }
+    .container {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .produto {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .produto img {
+      width: 120px;
+      height: auto;
+      border-radius: 5px;
+    }
+    .info {
+      flex: 1;
+      margin-left: 20px;
+    }
+    .info h2 {
+      margin: 0;
+      font-size: 20px;
+    }
+    .info p {
+      margin: 5px 0;
+      color: #555;
+    }
+    .preco {
+      font-size: 18px;
+      font-weight: bold;
+      color: #4CAF50;
+    }
+    .voltar {
+      margin-top: 20px;
+      padding: 10px;
+      background: #f44336;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      width: 100%;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Resultados da Pesquisa</h1>
+
+    <!-- Exemplo de produto -->
+    <div class="produto">
+      <img src="produto1.jpg" alt="Produto 1">
+      <div class="info">
+        <h2>Produto 1</h2>
+        <p>Descrição breve do produto.</p>
+        <span class="preco">R$ 99,90</span>
+      </div>
+    </div>
+
+    <div class="produto">
+      <img src="produto2.jpg" alt="Produto 2">
+      <div class="info">
+        <h2>Produto 2</h2>
+        <p>Descrição breve do produto.</p>
+        <span class="preco">R$ 149,90</span>
+      </div>
+    </div>
+
+    <!-- Botão de voltar -->
+    <button class="voltar" onclick="window.location.href='interior.html'">Voltar ao Início</button>
+  </div>
+</body>
+</html>
