@@ -9,7 +9,7 @@
       padding: 0;
       height: 100%;
       font-family: Arial, sans-serif;
-      background: url("fundo-cadastrar.png") no-repeat center center fixed;
+      background: url("imagem-fundo-cadastrar.png") no-repeat center center fixed;
       background-size: cover;
     }
     .form-container {
@@ -98,6 +98,14 @@
     </form>
     <!-- Botão de voltar -->
     <button class="voltar" onclick="window.location.href='interior.html'">Voltar à Página Inicial</button>
+<script>
+  document.querySelector("form").addEventListener("submit", function(event) {
+    event.preventDefault(); // evita envio real do formulário
+    alert("Cadastro realizado com sucesso!");
+  });
+</script>
+
+
   </div>
 </body>
 </html>
