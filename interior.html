@@ -15,7 +15,7 @@
       position: relative;
       width: 100%;
       height: 100%;
-      background: url("assets/interior-shopping.png") no-repeat;
+      background: url("interior-shopping.png") no-repeat;
       background-position: 50% 40%;
       background-size: cover;
     }
@@ -32,12 +32,10 @@
       filter: brightness(1.2);
     }
 
-    /* posições dos botões principais */
     #cadastrar { bottom: 20px; left: 30%; transform: translateX(-50%); }
     #minhaconta { bottom: 20px; left: 70%; transform: translateX(-50%); }
     #inicio { top: 120px; left: 50%; transform: translateX(-50%); }
 
-    /* carrinho */
     .carrinho {
       position: absolute;
       top: 50%;
@@ -62,8 +60,6 @@
       border: none;
       border-radius: 5px;
     }
-
-    /* área de visualização do carrinho */
     .carrinho-container {
       position: absolute;
       top: 20%;
@@ -101,20 +97,10 @@
       margin-right: auto;
     }
 
-    /* botões de pesquisa e promoções reposicionados */
-    #pesquisa { 
-      top: 20px;   /* canto superior esquerdo */
-      left: 20px;  
-    }
-    #promocoes { 
-      top: 220px;  /* bem mais abaixo, aumentando a distância */
-      left: 20px;  
-    }
-    #promocoes img { 
-      max-width: 400px; 
-    }
+    #pesquisa { top: 20px; left: 20px; }
+    #promocoes { top: 220px; left: 20px; }
+    #promocoes img { max-width: 400px; }
 
-    /* carrosséis */
     .carrossel-container {
       position: absolute;
       top: 25%;
@@ -138,7 +124,6 @@
       border-radius: 5px;
     }
 
-    /* campo de busca */
     .busca {
       text-align: center;
       margin-top: 15px;
@@ -160,34 +145,34 @@
   <div class="container">
     <!-- Botões principais -->
     <div class="botao" id="cadastrar" onclick="window.location.href='cadastrar.html'">
-      <img src="Botão-Cadastrar.png" alt="Botão Cadastrar">
+      <img src="botao-cadastrar.png" alt="Botão Cadastrar">
     </div>
     <div class="botao" id="inicio" onclick="window.location.href='index.html'">
-      <img src="medico.png" alt="Botão Início">
+      <img src="botao-inicio.png" alt="Botão Início">
     </div>
     <div class="botao" id="minhaconta" onclick="window.location.href='minhaconta.html'">
-      <img src="Botão Minha Conta.png" alt="Botão Minha Conta">
+      <img src="botao-minha-conta.png" alt="Botão Minha Conta">
     </div>
 
     <!-- Carrinho + Finalizar Compra -->
     <div class="carrinho">
-      <img src="Botão Carrinho de Compras.png" alt="Carrinho de Compras" onclick="mostrarCarrinho()">
-      <button class="finalizar" onclick="window.location.href='finalizar.html'">Finalizar Compra</button>
+       <img src="botao-carrinho.png" alt="Carrinho de Compras" onclick="mostrarCarrinho()">
+  <button class="finalizar" onclick="window.location.href='finalizar.html'">Finalizar Compra</button>
+</div>
+
+<!-- Área de visualização do carrinho -->
+<div class="carrinho-container" id="carrinho-container">
+  <h3>Itens no Carrinho</h3>
+  <ul id="lista-carrinho"></ul>
+  <button onclick="fecharCarrinho()">Fechar</button>
     </div>
 
-    <!-- Área de visualização do carrinho -->
-    <div class="carrinho-container" id="carrinho-container">
-      <h3>Itens no Carrinho</h3>
-      <ul id="lista-carrinho"></ul>
-      <button onclick="fecharCarrinho()">Fechar</button>
-    </div>
-
-    <!-- Botões Pesquisa e Promoções reposicionados -->
+    <!-- Botões Pesquisa e Promoções -->
     <div class="botao" id="pesquisa" onclick="mostrarCarrossel('carrossel-pesquisa')">
-      <img src="Botão Pesquisa de Produtos.png" alt="Pesquisa de Produtos">
+      <img src="botao-pesquisa de produtos.png" alt="Pesquisa de Produtos">
     </div>
     <div class="botao" id="promocoes" onclick="mostrarCarrossel('carrossel-promocoes')">
-      <img src="Botão Promoções.png" alt="Promoções">
+      <img src="botao-promoçoes.png" alt="Promoções">
     </div>
 
     <!-- Carrossel de Pesquisa de Produtos -->
@@ -211,7 +196,7 @@
     </div>
   </div>
 
-  <script>
+<script>
     let carrinho = [];
 
     function mostrarCarrossel(id) {
@@ -237,19 +222,6 @@
     // Funções do carrinho
     function mostrarCarrinho() {
       const container = document.getElementById('carrinho-container');
-      const lista = document.getElementById('lista-carrinho');
-      lista.innerHTML = "";
-
-      if (carrinho.length === 0) {
-        lista.innerHTML = "<li>Carrinho vazio</li>";
-      } else {
-        carrinho.forEach(item => {
-          const li = document.createElement("li");
-          li.textContent = item;
-          lista.appendChild(li);
-        });
-      }
-
       container.style.display = "block";
     }
 
@@ -265,9 +237,6 @@
   </script>
 </body>
 </html>
-
-
-
 
 
 
